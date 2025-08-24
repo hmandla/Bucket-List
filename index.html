@@ -4,126 +4,52 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Bucket List 💖</title>
-  <meta name="description" content="A shared bucket list for planning trips together." />
   <style>
-    :root{
-      --bg:#fff8f0;
-      --card:#ffffff;
-      --ink:#2d2a32;
-      --brand:#e91e63;
-      --accent:#3f51b5;
-      --muted:#6b7280;
-      --shadow:0 10px 30px rgba(0,0,0,0.06);
-      --radius:18px;
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #fff8f0;
+      color: #333;
+      padding: 20px;
     }
-    *{box-sizing:border-box}
-    body{
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      margin:0; padding:0;
+    h1 { color: #e91e63; }
+    h2 { margin-top: 40px; color: #3f51b5; }
+    iframe { border: none; margin-top: 10px; border-radius: 12px; }
+    .tag {
+      padding:8px 12px; border-radius:999px; background:#ffe4ec; color:#b3124a;
+      font-weight:600; font-size:14px;
     }
-    .wrap{
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 24px;
-    }
-    header{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:16px; padding: 18px 20px; margin: 16px 0 28px;
-      background: linear-gradient(180deg, #fff 0%, #fff8f8 100%);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    h1{font-size: clamp(22px, 6vw, 34px); margin:0; color: var(--brand); letter-spacing:0.3px;}
-    .tag{
-      padding:8px 12px; border-radius:999px; background:#ffe4ec; color:#b3124a; font-weight:600; font-size:14px;
-    }
-    .card{
-      background:var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
-      padding: 18px; margin-bottom: 20px;
-    }
-    h2{margin: 6px 0 12px; color:var(--accent); font-size: clamp(18px, 4vw, 22px);}
-    p.lead{color:var(--muted); margin-top: 6px;}
-    iframe{
-      width:100%; border:0; border-radius:12px; background:#fafafa;
-    }
-    .help{
-      font-size:14px; color:var(--muted);
-    }
-    footer{margin:40px 0 20px; text-align:center; color:var(--muted); font-size:13px;}
-    details{
-      background:#fff; border-radius:12px; padding:12px 14px; border:1px dashed #e5e7eb;
-    }
-    details[open]{box-shadow: var(--shadow);}
-    summary{cursor:pointer; font-weight:600; color:#374151; margin-bottom:8px;}
-    code{background:#f3f4f6; padding:2px 6px; border-radius:6px;}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div>
-        <h1>💑 Our Bucket List</h1>
-        <p class="lead">Add places we dream of visiting together 🌍✈️</p>
-      </div>
-      <span class="tag">Live & Shareable</span>
-    </header>
+  <h1>💑 Our Bucket List</h1>
+  <p>Add places we dream of visiting together 🌍✈️</p>
+  <span class="tag">Live & Shareable</span>
 
-    <!-- ✨ Add via Google Form -->
-    <section class="card">
-      <h2>✨ Add a New Place</h2>
-      <p class="help">Fill the form below. Submissions go straight to our shared Google Sheet.</p>
-      <!--
-        HOW TO REPLACE:
-        1) Open your Google Form → Send → <> Embed → Copy the embed URL that starts with
-           https://docs.google.com/forms/d/e/...
-        2) Paste it into the src attribute below.
-      -->
-     <iframe 
-  src="https://docs.google.com/forms/d/e/1FAIpQLSclPv4yymwE-CCdHW5UxXTzzkR_BaSNpXdfmfaxvbhJFqhfwg/viewform?embedded=true" 
-  width="100%" 
-  height="650" 
-  frameborder="0" 
-  marginheight="0" 
-  marginwidth="0">
-</iframe>
+  <!-- ✨ Google Form Embed -->
+  <h2>✨ Add a New Place</h2>
+  <iframe 
+    src="https://docs.google.com/forms/d/e/1FAIpQLSclPv4yymwE-CCdHW5UxXTzzkR_BaSNpXdfmfaxvbhJFqhfwg/viewform?embedded=true" 
+    width="100%" 
+    height="650" 
+    frameborder="0" 
+    marginheight="0" 
+    marginwidth="0">
+  </iframe>
 
-    </section>
+  <!-- 📋 Google Sheet Embed -->
+  <h2>📋 Our List So Far</h2>
+  <iframe 
+    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTvWSi_C3d473P3hiZYFH2l8zCp_bbe560GKwrrdSB2eHf5op__OiyZf23oeFn9vsuaNK4-1QkJCEeg/pubhtml?widget=true&amp;headers=false" 
+    width="100%" 
+    height="540" 
+    frameborder="0" 
+    marginheight="0" 
+    marginwidth="0">
+  </iframe>
 
-    <!-- 📋 Show live list from Google Sheet -->
-    <section class="card">
-      <h2>📋 Our List So Far</h2>
-      <p class="help">This shows the live Google Sheet (published to the web). Updates appear automatically.</p>
-      <!--
-        HOW TO REPLACE:
-        1) In your linked Google Sheet → File → Share → Publish to web → Copy the published link.
-        2) It should look like: https://docs.google.com/spreadsheets/d/e/2PACX-.../pubhtml
-        3) Paste that whole link into the src below, keep the ?widget=true&headers=false at the end.
-      -->
-      <iframe
-        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTvWSi_C3d473P3hiZYFH2l8zCp_bbe560GKwrrdSB2eHf5op__OiyZf23oeFn9vsuaNK4-1QkJCEeg/pubhtml"
-        height="540"
-        allowfullscreen>
-      </iframe>
-    </section>
-
-    <section class="card">
-      <details>
-        <summary>🛠 Setup Help (click to expand)</summary>
-        <ol>
-          <li>Create a Google Form with fields like <em>Place</em>, <em>Location</em>, <em>Why</em>, <em>Added by</em>.</li>
-          <li>Click <strong>Send → &lt;&gt; Embed</strong>, copy the iframe URL (starts with <code>https://docs.google.com/forms/d/e/</code>) and replace <code>YOUR_FORM_EMBED_URL</code> above.</li>
-          <li>Open the Form’s linked Google Sheet (Responses → View in Sheets).</li>
-          <li>In the Sheet: <strong>File → Share → Publish to web</strong> → pick “Entire Document” → <strong>Publish</strong>.</li>
-          <li>Copy the published link (it looks like <code>https://docs.google.com/spreadsheets/d/e/2PACX-.../pubhtml</code>) and replace <code>YOUR_SHEET_EMBED_URL</code> above.</li>
-          <li>Commit this <code>index.html</code> to your GitHub repo and enable GitHub Pages (Settings → Pages → Source: deploy from main).</li>
-          <li>Share your GitHub Pages URL with your partner 🎉</li>
-        </ol>
-      </details>
-    </section>
-
-    <footer>Made with 💖 for us • Works on phone & desktop</footer>
-  </div>
+  <footer style="margin-top:40px; font-size:13px; color:#777;">
+    Made with 💖 by us • Works on phone & desktop
+  </footer>
 </body>
 </html>
